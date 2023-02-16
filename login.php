@@ -19,7 +19,7 @@
     <br>
     <br>
     <hr>
-    <a href="register.php"><button >Register</button></a>
+    <a href="register.php" target="frame2"><button >Register</button></a>
 
 
 <?php
