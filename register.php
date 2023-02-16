@@ -5,12 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script type="text/javascript">
+        function validate(){
+            let email=document.getElementById("uname");
+            let password=document.getElementById("pass");
+            let Findex=email.value.indexOf("@");
+            let Lindex=email.value.lastIndexOf(".");
+            if(email.value.trim().length==""){
+                alert("please provide Email");
+                email.focus();
+                return false;
+            }
+            else if(Findex<1 && Lindex<Findex+2){
+                alert("Email not correct");
+                email.focus();
+                return false;
+            }
+            else if(password.value.trim().length<8){
+                alert("Password need min 8 character");
+                email.focus();
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
     <h1>REGISTER</h1>
-    <form method="POST">
-    <input type="text" name="uname" id="" placeholder="username">
-    <input type="password" name="pass" id="" placeholder="password">
+    <form method="POST" onsubmit="return validate()">
+    <input type="text" name="uname" id="uname" placeholder="email">
+    <input type="password" name="pass" id="pass" placeholder="password">
     <button type="submit" name="REG">Register</button>
     </form>
 

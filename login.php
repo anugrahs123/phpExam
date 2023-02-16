@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +38,10 @@
         $sql="select * from profile where name='$Uname' and password='$Password'";
         $result=mysqli_query($conn,$sql);
         if(mysqli_num_rows($result)==1){
+            while($row=mysqli_fetch_row($result)){
+                // setcookie("name",$row[1],time()+3600);
+                // $_SESSION["name"]=$row[1];
+            }
             header('Location:welcome.php');
         }
         else{
